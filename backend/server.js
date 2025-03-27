@@ -5,11 +5,11 @@ const authRoutes = require('./routes/auth');
 const appointmentRoutes = require('./routes/appointments');
 const cors = require('cors');
 
-const result = dotenv.config();
+const result = dotenv.config({ path: './backend/.env' });
 if (result.error) {
   console.error("Failed to load .env file", result.error);
 }
-dotenv.config();
+// dotenv.config(); // Removed duplicate call
 
 const app = express();
 app.use(express.json());
